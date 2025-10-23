@@ -1,0 +1,205 @@
+:root {
+  --bg: #111;
+  --text: #f5f5f5;
+  --button: #222;
+  --button-active: #4d96ff;
+  --panel: rgba(25, 25, 25, 0.95);
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='light'] {
+  --bg: #fafafa;
+  --text: #111;
+  --button: #e0e0e0;
+  --button-active: #4d96ff;
+  --panel: rgba(255, 255, 255, 0.96);
+  --border: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+}
+
+.toolbar {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 30;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.button {
+  background: var(--button);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  padding: 5px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.button:hover {
+  background: var(--button-active);
+  color: white;
+}
+.button.active {
+  background: var(--button-active);
+  color: white;
+}
+
+.badge {
+  font-size: 12px;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.theme-toggle {
+  font-size: 12px;
+  border-radius: 6px;
+  padding: 4px 6px;
+  border: 1px solid var(--border);
+  background: var(--button);
+  color: var(--text);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--button-active);
+  border-radius: 3px;
+}
+
+/* --- Toolbar aesthetic refinements --- */
+.toolbar {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    border-radius: 16px;
+    backdrop-filter: blur(12px) saturate(180%);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+  
+  /* Buttons & interactive elements */
+  .button {
+    background: var(--button);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    padding: 6px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-weight: 500;
+  }
+  .button:hover {
+    background: var(--button-active);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+  .button.active {
+    background: var(--button-active);
+    color: #fff;
+    box-shadow: 0 0 0 2px rgba(77,150,255,0.3);
+  }
+  
+  /* Sliders */
+  [data-radix-slider-root] {
+    width: 120px;
+    height: 4px;
+    background: var(--border);
+    border-radius: 3px;
+    position: relative;
+  }
+  [data-radix-slider-range] {
+    background: var(--button-active);
+    border-radius: 3px;
+  }
+  [data-radix-slider-thumb] {
+    width: 14px;
+    height: 14px;
+    background: var(--button-active);
+    border-radius: 50%;
+    cursor: grab;
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 2px rgba(0,0,0,0.4);
+  }
+  [data-radix-slider-thumb]:active {
+    transform: scale(1.1);
+    cursor: grabbing;
+  }
+  
+  /* Popover styling (color palette dropdowns, etc.) */
+  [data-radix-popper-content-wrapper] {
+    z-index: 9999 !important;
+  }
+  .radix-popover-content {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  }
+  
+  /* Badges & small labels */
+  .badge {
+    font-size: 12px;
+    opacity: 0.8;
+    background: var(--button);
+    border-radius: 8px;
+    padding: 2px 8px;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  
+  /* Select dropdown (theme selector) */
+  .theme-toggle {
+    font-size: 12px;
+    border-radius: 8px;
+    padding: 5px 10px;
+    border: 1px solid var(--border);
+    background: var(--button);
+    color: var(--text);
+  }
+  
+  /* Dark/light mode variable tuning */
+  :root {
+    --bg: #111;
+    --text: #f5f5f5;
+    --button: rgba(255,255,255,0.08);
+    --button-active: #4d96ff;
+    --panel: rgba(30,30,30,0.75);
+    --border: rgba(255,255,255,0.15);
+  }
+  
+  [data-theme='light'] {
+    --bg: #fafafa;
+    --text: #111;
+    --button: rgba(0,0,0,0.05);
+    --button-active: #4d96ff;
+    --panel: rgba(255,255,255,0.85);
+    --border: rgba(0,0,0,0.1);
+  }
+  
